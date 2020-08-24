@@ -27,7 +27,7 @@ ip_oct2 = int(ip.split('.')[1])
 ip_oct3 = int(ip.split('.')[2])
 ip_oct4 = int(ip.split('.')[3])
 
-ip_template = ''' 
+ip_template = '''
 {0:<10} {1:<10} {2:<10} {3:<10}
 {0:010b} {1:010b} {2:010b} {3:010b}
 '''
