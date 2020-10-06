@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
 Задание 4.2
@@ -10,9 +11,7 @@
 
 mac = "AAAA:BBBB:CCCC"
 
-"""
-Решение 
-
-"""
-
-mac.replace(':','.')
+#Решение 
+print('mac = "AAAA:BBBB:CCCC"')
+mac_replace = mac.replace(':','.')
+print('mac_replace = ' + mac_replace)

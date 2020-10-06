@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
 Задание 4.6
@@ -18,10 +19,10 @@ ospf_route = "      10.0.24.0/24 [110/41] via 10.0.13.3, 3d18h, FastEthernet0/0"
 
 # Решение
 
-ospf_list = ospf_route.split()
+print('ospf_route = "      10.0.24.0/24 [110/41] via 10.0.13.3, 3d18h, FastEthernet0/0"')
 
+ospf_list = ospf_route.split()
 ospf_template = '''
-Protocol:               {}SPF
 Prefix:                 {}
 AD/Metric:              {}
 Next-Hop:               {}
@@ -29,4 +30,4 @@ Last update:            {}
 Outbound Interface:     {}
 '''
 
-print(ospf_template.format(ospf_list[0],ospf_list[1],ospf_list[2].strip('[]'),ospf_list[4].strip(','),ospf_list[5].strip(','),ospf_list[6]))
+print(ospf_template.format(ospf_list[0], ospf_list[1].strip('[]'), ospf_list[3].strip(','), ospf_list[4].strip(','), ospf_list[5]))

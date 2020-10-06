@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
 Задание 4.7
@@ -13,6 +14,7 @@ mac = "AAAA:BBBB:CCCC"
 
 # Решение
 
-mac_hex = '0x'+mac.split(':')[0]+mac.split(':')[1]+mac.split(':')[2]
+print('mac = "AAAA:BBBB:CCCC"')
+mac_hex = '0x'+''.join(mac.split(':'))
 mac_bin = bin(int(mac_hex,16))[2:]
-print(mac_bin)
+print('mac_bin = ' + mac_bin)
