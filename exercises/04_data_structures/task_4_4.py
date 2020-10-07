@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
 Задание 4.4
@@ -16,6 +17,7 @@ vlanы вручную.
 vlans = [10, 20, 30, 1, 2, 100, 10, 30, 3, 4, 10]
 
 # Решение
+print('vlans = ' + vlans)
 
 vlans_uniq = list(set(vlans))
 vlans_uniq.sort()

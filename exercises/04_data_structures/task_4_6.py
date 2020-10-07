@@ -19,7 +19,7 @@ ospf_route = "      10.0.24.0/24 [110/41] via 10.0.13.3, 3d18h, FastEthernet0/0"
 
 # Решение
 
-print('ospf_route = "      10.0.24.0/24 [110/41] via 10.0.13.3, 3d18h, FastEthernet0/0"')
+print('ospf_route = ' + ospf_route)
 
 ospf_list = ospf_route.split()
 ospf_template = '''

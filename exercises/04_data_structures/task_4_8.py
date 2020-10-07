@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
 Задание 4.8
@@ -21,6 +22,8 @@
 ip = "192.168.3.1"
 
 # Решение
+
+print('ip = ' + ip)
 
 ip_oct1 = int(ip.split('.')[0])
 ip_oct2 = int(ip.split('.')[1])
