@@ -23,7 +23,6 @@ Mask:
 
 #Решение
 ip_network = input('Введите адрес IP-сети (10.1.1.0/24): ')
-#ip_network = '10.1.1.0/24'
 ip_net = ip_network.split('/')[0]
 ip_mask = ip_network.split('/')[1]
 
@@ -33,10 +32,12 @@ ip_net3 = int(ip_net.split('.')[2])
 ip_net4 = int(ip_net.split('.')[3])
 
 ip_maskbin = '1' * int(ip_mask) + '0' * (32-int(ip_mask))
-ip_maskbin1 = ip_maskbin[0:8]
+
+ip_maskbin1 = ip_maskbin[:8]
 ip_maskbin2 = ip_maskbin[8:16]
 ip_maskbin3 = ip_maskbin[16:24]
 ip_maskbin4 = ip_maskbin[24:]
+
 ip_mask1 = int(ip_maskbin1,2)
 ip_mask2 = int(ip_maskbin2,2)
 ip_mask3 = int(ip_maskbin3,2)
