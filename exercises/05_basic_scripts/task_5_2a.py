@@ -43,8 +43,7 @@ bin_ip = "00001010000000010000000111000011"
 
 #Решение
 
-#ip_network = input('Введите адрес IP-сети (10.1.1.0/24): ')
-ip_cidr = '192.168.1.5/24'
+ip_cidr = input('Введите адрес IP-сети (10.1.1.0/24): ')
 ip_addr = ip_cidr.split('/')[0]
 ip_mask = ip_cidr.split('/')[1]
 
@@ -62,6 +61,16 @@ ip_addrbin = ip_addrbin1 + ip_addrbin2 + ip_addrbin3 + ip_addrbin4
 
 ip_netbin = ip_addrbin[:int(ip_mask)] + '0' * (32 - int(ip_mask))
 
+ip_netbin1 = ip_netbin[:8]
+ip_netbin2 = ip_netbin[8:16]
+ip_netbin3 = ip_netbin[16:24]
+ip_netbin4 = ip_netbin[24:]
+
+ip_net1 = int(ip_netbin1,2)
+ip_net2 = int(ip_netbin2,2)
+ip_net3 = int(ip_netbin3,2)
+ip_net4 = int(ip_netbin4,2)
+
 ip_maskbin = '1' * int(ip_mask) + '0' * (32 - int(ip_mask))
 
 ip_maskbin1 = ip_maskbin[:8]
@@ -76,8 +85,8 @@ ip_mask4 = int(ip_maskbin4,2)
 
 ip_template = f'''
 Network:
-{ip_addr1:<8} {ip_addr2:<8} {ip_addr3:<8} {ip_addr4:<8}
-{ip_addrbin1:<8} {ip_addrbin2:<8} {ip_addrbin3:<8} {ip_addrbin4:<8}
+{ip_net1:<8} {ip_net2:<8} {ip_net3:<8} {ip_net4:<8}
+{ip_netbin1:<8} {ip_netbin2:<8} {ip_netbin3:<8} {ip_netbin4:<8}
 
 Mask:
 /{ip_mask}
@@ -86,4 +95,3 @@ Mask:
 '''
 
 print(ip_template)
-print(ip_netbin)
