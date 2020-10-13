@@ -22,9 +22,9 @@ Mask:
 """
 
 #Решение
-ip_network = input('Введите адрес IP-сети (10.1.1.0/24): ')
-ip_net = ip_network.split('/')[0]
-ip_mask = ip_network.split('/')[1]
+ip_cidr = input('Введите адрес IP-сети (10.1.1.0/24): ')
+ip_net = ip_cidr.split('/')[0]
+ip_mask = ip_cidr.split('/')[1]
 
 ip_net1 = int(ip_net.split('.')[0])
 ip_net2 = int(ip_net.split('.')[1])
