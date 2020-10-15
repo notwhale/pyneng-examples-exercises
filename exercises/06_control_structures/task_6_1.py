@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
 Задание 6.1
@@ -12,3 +13,16 @@
 """
 
 mac = ["aabb:cc80:7000", "aabb:dd80:7340", "aabb:ee80:7000", "aabb:ff80:7000"]
+
+# Решение
+
+print('mac = ', end='')
+print(mac)
+
+mac_cisco = []
+
+for i in mac:
+    mac_cisco.append(i.replace(':','.'))
+
+print('mac_cisco = ', end='')
+print(mac_cisco)

@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
 Задание 6.2
@@ -14,3 +15,19 @@
 
 Ограничение: Все задания надо выполнять используя только пройденные темы.
 """
+
+# Решение
+
+ip_addr = input('Введите IP-адрес: ')
+ip_oct1 = int(ip_addr.split('.')[0])
+
+if 1 < ip_oct1 < 224:
+    print('unicast')
+elif 223 < ip_oct1 < 240:
+    print('multicast')
+elif ip_addr == '255.255.255.255':
+    print('local broadcast')
+elif ip_addr == '0.0.0.0':
+    print('unassigned')
+else:
+    print('unused')
