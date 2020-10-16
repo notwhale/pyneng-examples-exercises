@@ -41,9 +41,9 @@ if not ip_valid:
     print('Неправильный IP-адрес')
 else:
     ip_oct1 = int(ip[0])
-    if 1 < ip_oct1 < 224:
+    if 1 <= ip_oct1 <= 223:
         print('unicast')
-    elif 223 < ip_oct1 < 240:
+    elif 224 <= ip_oct1 <= 239:
         print('multicast')
     elif ip_addr == '255.255.255.255':
         print('local broadcast')
