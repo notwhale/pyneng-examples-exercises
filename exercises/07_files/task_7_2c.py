@@ -17,3 +17,19 @@
 """
 
 ignore = ["duplex", "alias", "Current configuration"]
+
+# Решение
+from sys import argv
+
+config_in = argv[1]
+config_out = argv[2]
+
+with open(config_in,'r') as f, open(config_out, 'w') as out:
+    for line in f:
+        line = line.strip()
+        NotInIgnore = True
+        for i in ignore:
+            if i in line:
+                NotInIgnore = False
+        if NotInIgnore == True:
+            config_out.write(line + '\n')

@@ -23,3 +23,14 @@
 Ограничение: Все задания надо выполнять используя только пройденные темы.
 
 """
+
+#Решение
+
+vlans = []
+with open('CAM_table.txt','r') as f:
+    for line in f:
+        line = line.strip().split()
+        if line and line[0].isdigit():
+            vlans.append([int(line[0]),line[1:]])
+    for vlan in sorted(vlans):
+        print('{:>4} {:>18} {:>8}'.format(vlan[0],vlan[1][0],vlan[1][2]))

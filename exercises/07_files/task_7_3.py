@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
 Задание 7.3
@@ -17,3 +18,11 @@
 Ограничение: Все задания надо выполнять используя только пройденные темы.
 
 """
+
+#Решение
+
+with open('CAM_table.txt','r') as f:
+    for line in f:
+        line = line.strip().split()
+        if line and line[0].isdigit():
+            print('{:>4} {:>18} {:>8}'.format(line[0],line[1],line[3]))

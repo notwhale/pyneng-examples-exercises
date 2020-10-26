@@ -14,3 +14,18 @@
 """
 
 ignore = ["duplex", "alias", "Current configuration"]
+
+# Решение
+from sys import argv
+
+config = argv[1]
+
+with open(config,'r') as f, open('config_sw1_cleared.txt', 'w') as out:
+    for line in f:
+        line = line.strip()
+        NotInIgnore = True
+        for i in ignore:
+            if i in line:
+                NotInIgnore = False
+        if NotInIgnore == True:
+            out.write(line + '\n')

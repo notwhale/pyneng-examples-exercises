@@ -13,3 +13,19 @@
 """
 
 ignore = ["duplex", "alias", "Current configuration"]
+
+# Решение
+from sys import argv
+
+config = argv[1]
+
+with open(config,'r') as f:
+    for line in f:
+        line = line.strip()
+        NotInIgnore = True
+        if not line.startswith('!'):
+            for i in ignore:
+                if i in line:
+                    NotInIgnore = False
+            if NotInIgnore == True:
+                print(line)
