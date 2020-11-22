@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
 Задание 6.3
@@ -49,5 +50,18 @@ for intf, vlan in access.items():
     for command in access_template:
         if command.endswith("access vlan"):
             print(" {} {}".format(command, vlan))
+        else:
+            print(" {}".format(command))
+
+# Решение
+
+for intf, vlan in trunk.items():
+    print("interface FastEthernet" + intf)
+    for command in trunk_template:
+        if command.endswith("allowed vlan"):
+            if vlan[0] == 'only':
+                print(" {} {}".format(command, ','.join(vlan[1:])))
+            else:
+                print(" {} {} {}".format(command, vlan[0], ','.join(vlan[1:])))
         else:
             print(" {}".format(command))
