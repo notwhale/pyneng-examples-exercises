@@ -74,12 +74,12 @@ def generate_access_config(intf_vlan_mapping, access_template):
 # Решение
     config_list = []
     for intf, vlan in intf_vlan_mapping.items():
-        config_list.append(intf)
+        config_list.append(f'interface {intf}')
         for command in access_template:
             if command.endswith('vlan'):
-                config_list.append(' {} {}'.format(command,vlan))
+                config_list.append(f'{command} {vlan}')
             else:
-                config_list.append(' {}'.format(command))
+                config_list.append(f'{command}')
     return config_list
 
 print('\n' + '-[ access_config ]-' + '-' * 50 + '\n')
