@@ -23,3 +23,36 @@
 
 Ограничение: Все задания надо выполнять используя только пройденные темы.
 """
+
+#Решение
+
+def get_int_vlan_map(config_filename):
+    result_tuple = ()
+    with open(config_filename) as f:
+        intf_access = {}
+        intf_trunk = {}
+        for line in f:
+            if 'interface' in line:
+                intf = line.split()[-1]
+            elif 'mode access' in line:
+                intf_access[intf] = 1
+            elif 'access vlan' in line:
+                intf_access[intf] = int(line.split()[-1])
+            elif 'allowed vlan' in line:
+                intf_trunk[intf] = list(map(int,line.split()[-1].split(',')))
+    result_tuple = (intf_access,intf_trunk)
+    return result_tuple
+
+print('\n' + '-[ config_sw1.txt ]-' + '-' * 50 + '\n')
+
+test1 = get_int_vlan_map('config_sw1.txt')
+for item in test1:
+    for key, value in item.items():
+        print(key, value)
+
+print('\n' + '-[ config_sw2.txt ]-' + '-' * 50 + '\n')
+
+test2 = get_int_vlan_map('config_sw2.txt')
+for item in test2:
+    for key, value in item.items():
+        print(key, value)
